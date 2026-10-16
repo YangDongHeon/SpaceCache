@@ -1,0 +1,17 @@
+# Data preprocessing only (scripts/prepare_data.sh). Kept apart from
+# environment.yml: the Waymo reader needs TensorFlow 2.12 and pins numpy.
+# Waymo additionally needs `pip install waymo-open-dataset-tf-2-12-0
+# protobuf==3.20.3` (x86_64 Linux only; its frame_utils passes a bytearray,
+# which protobuf 4+ rejects).
+name: spacecache-data
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - nuscenes-devkit
+    - plyfile
+    - imageio
+    - pandas

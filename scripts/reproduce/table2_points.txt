@@ -1,0 +1,16 @@
+# Table 2 operating points: the swept values of Appendix Table 5, ScanNet
+# column (LitePT-B, SpaceCache at L = 4). Read by indoor_accuracy.sh,
+# indoor_latency_orin.sh and spacecache/experiments/indoor_table.py.
+# budget = mIoU-drop column of Table 2 (1 or 2 points); run = the run
+# directory name (spacecache/common/naming.py) of the dense-attention run
+# budget|cell|run|run.py arguments
+1|tome_r0.11|tome_dense_r0.11_clamp|--policy tome --merge_ratio 0.11 --tome_clamp_patch
+2|tome_r0.13|tome_dense_r0.13_clamp|--policy tome --merge_ratio 0.13 --tome_clamp_patch
+1|algm_tau0.9|algm_dense_tau0.9|--policy algm --algm_tau 0.9
+2|algm_tau0.8125|algm_dense_tau0.8125|--policy algm --algm_tau 0.8125
+1|gitmerge3d_r0.55|gitmerge3d_dense_r0.55|--policy gitmerge3d --merge_ratio 0.55
+2|gitmerge3d_r0.645|gitmerge3d_dense_r0.645|--policy gitmerge3d --merge_ratio 0.645
+1|s3_conf0.85|spacecache_s3_dense_L4_conf0.85|--policy spacecache_s3 --lifetime 4 --confidence 0.85
+2|s3_conf0|spacecache_s3_dense_L4|--policy spacecache_s3 --lifetime 4 --confidence 0
+1|s34_conf0.99|spacecache_s34_dense_L4_conf0.99|--policy spacecache_s34 --lifetime 4 --confidence 0.99
+2|s34_conf0.8|spacecache_s34_dense_L4_conf0.8|--policy spacecache_s34 --lifetime 4 --confidence 0.8
